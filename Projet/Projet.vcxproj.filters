@@ -16,16 +16,25 @@
     <Filter Include="lib">
       <UniqueIdentifier>{d83617f4-4798-4a22-b3e1-6fec25abcdf5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\shaders">
-      <UniqueIdentifier>{ea518992-795e-4679-86ea-cb9c63af9013}</UniqueIdentifier>
+    <Filter Include="Source Files\Objects">
+      <UniqueIdentifier>{8980769a-81da-44fb-807c-78b66d21c351}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Objects\Wolf">
+      <UniqueIdentifier>{6a1cc664-957b-4c53-88a1-089bdaaf84fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Objects\Human">
+      <UniqueIdentifier>{bf281c39-2ca5-4767-b5ab-44950b5e5773}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Objects\Cottage">
+      <UniqueIdentifier>{75bad08a-2b74-476e-b064-980b54da5e90}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Projet.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="tiny_obj_loader.cc">
       <Filter>lib</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -49,24 +58,68 @@
     <None Include="vertex_shader.glsl">
       <Filter>Source Files</Filter>
     </None>
+    <None Include="Objects\Wolf\Wolf_obj.mtl">
+      <Filter>Source Files\Objects\Wolf</Filter>
+    </None>
+    <None Include="Objects\Cottage\cottage_obj.mtl">
+      <Filter>Source Files\Objects\Cottage</Filter>
+    </None>
+    <None Include="FinalBaseMesh.mtl">
+      <Filter>Source Files\Objects\Human</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="tiny_obj_loader.h">
       <Filter>lib</Filter>
     </ClInclude>
+    <ClInclude Include="stb_image.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Object Include="cube.obj">
-      <Filter>Source Files</Filter>
-    </Object>
     <Object Include="..\..\..\..\..\OneDrive - Siemens AG\Bureau\Tree1.obj">
       <Filter>Source Files</Filter>
     </Object>
-    <Object Include="..\..\..\..\..\OneDrive - Siemens AG\Bureau\Wolf_obj.obj">
-      <Filter>Source Files</Filter>
+    <Object Include="Objects\cube.obj">
+      <Filter>Source Files\Objects</Filter>
     </Object>
-    <Object Include="..\..\..\..\..\OneDrive - Siemens AG\Bureau\Wolf_One_obj.obj">
-      <Filter>Source Files</Filter>
+    <Object Include="Objects\Wolf\Wolf_obj.obj">
+      <Filter>Source Files\Objects\Wolf</Filter>
     </Object>
+    <Object Include="Objects\Human\FinalBaseMesh.obj">
+      <Filter>Source Files\Objects\Human</Filter>
+    </Object>
+    <Object Include="Objects\Cottage\cottage_obj.obj">
+      <Filter>Source Files\Objects\Cottage</Filter>
+    </Object>
+    <Object Include="Objects\Human\FinalBaseMesh_with_UVs.obj">
+      <Filter>Source Files\Objects\Human</Filter>
+    </Object>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Objects\texture.png">
+      <Filter>Source Files\Objects</Filter>
+    </Image>
+    <Image Include="Objects\Wolf\Wolf_Body.jpg">
+      <Filter>Source Files\Objects\Wolf</Filter>
+    </Image>
+    <Image Include="Objects\Wolf\Wolf_Eyes_1.jpg">
+      <Filter>Source Files\Objects\Wolf</Filter>
+    </Image>
+    <Image Include="Objects\Wolf\Wolf_Eyes_2.jpg">
+      <Filter>Source Files\Objects\Wolf</Filter>
+    </Image>
+    <Image Include="Objects\Wolf\Wolf_Fur.jpg">
+      <Filter>Source Files\Objects\Wolf</Filter>
+    </Image>
+    <Image Include="Objects\Texture_Old_paint.jpg">
+      <Filter>Source Files\Objects</Filter>
+    </Image>
+    <Image Include="Objects\Texture_humain.jpg">
+      <Filter>Source Files\Objects\Human</Filter>
+    </Image>
+    <Image Include="Objects\Wolf\Texture_Wolf.jpg">
+      <Filter>Source Files\Objects\Wolf</Filter>
+    </Image>
   </ItemGroup>
 </Project>

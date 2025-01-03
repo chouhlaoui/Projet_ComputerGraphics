@@ -133,10 +133,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Projet.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="tiny_obj_loader.cc" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="stb_image.h" />
     <ClInclude Include="tiny_obj_loader.h" />
   </ItemGroup>
   <ItemGroup>
@@ -147,6 +148,9 @@
   <ItemGroup>
     <None Include="..\libs\glew-2.1.0\bin\Release\x64\glew32.dll" />
     <None Include="fragment_shader.glsl" />
+    <None Include="FinalBaseMesh.mtl" />
+    <None Include="Objects\Cottage\cottage_obj.mtl" />
+    <None Include="Objects\Wolf\Wolf_obj.mtl" />
     <None Include="vertex_shader.glsl" />
   </ItemGroup>
   <ItemGroup>
@@ -154,18 +158,36 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </Object>
-    <Object Include="..\..\..\..\..\OneDrive - Siemens AG\Bureau\Wolf_obj.obj">
+    <Object Include="Objects\Cottage\cottage_obj.obj">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </Object>
-    <Object Include="..\..\..\..\..\OneDrive - Siemens AG\Bureau\Wolf_One_obj.obj">
+    <Object Include="Objects\cube.obj">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </Object>
-    <Object Include="cube.obj">
+    <Object Include="Objects\Human\FinalBaseMesh.obj">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </Object>
+    <Object Include="Objects\Human\FinalBaseMesh_with_UVs.obj">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </Object>
+    <Object Include="Objects\Wolf\Wolf_obj.obj">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </Object>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Objects\texture.png" />
+    <Image Include="Objects\Texture_humain.jpg" />
+    <Image Include="Objects\Texture_Old_paint.jpg" />
+    <Image Include="Objects\Wolf\Texture_Wolf.jpg" />
+    <Image Include="Objects\Wolf\Wolf_Body.jpg" />
+    <Image Include="Objects\Wolf\Wolf_Eyes_1.jpg" />
+    <Image Include="Objects\Wolf\Wolf_Eyes_2.jpg" />
+    <Image Include="Objects\Wolf\Wolf_Fur.jpg" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
