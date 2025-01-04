@@ -11,6 +11,20 @@
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
 
+glm::vec3 cameraPos = glm::vec3(0.0f, 0.0f, 3.0f);
+glm::vec3 cameraFront = glm::vec3(0.0f, 0.0f, -1.0f);
+glm::vec3 cameraUp = glm::vec3(0.0f, 1.0f, 0.0f);
+
+float yaw = -10.0f;  
+float pitch = 0.0f;  
+float lastX = 400.0f;
+float lastY = 300.0f; 
+float fov = 45.0f;
+
+bool firstMouse = true; 
+float deltaTime = 0.0f; 
+float lastFrame = 0.0f; 
+
 GLuint cubeVAO, cubeVBO, cubeEBO;
 GLuint HumanVAO, HumanVBO, HumanEBO;
 GLuint Wolf1VAO, Wolf1VBO, Wolf1EBO;
@@ -20,6 +34,73 @@ int width, height;
 
 static void framebuffer_size_callback(GLFWwindow* window, int width, int height) {
     glViewport(0, 0, width, height);
+}
+
+void mouse_callback(GLFWwindow* window, double xpos, double ypos)
+{
+    if (firstMouse) {
+        lastX = (float)xpos;
+        lastY = (float)ypos;
+        firstMouse = false;
+    }
+
+    float xoffset = (float)xpos - lastX;
+    float yoffset = lastY - (float)ypos;
+    lastX = (float)xpos;
+    lastY = (float)ypos;
+
+    float sensitivity = 0.1f;
+    xoffset *= sensitivity;
+    yoffset *= sensitivity;
+
+    yaw += xoffset;
+    pitch += yoffset;
+
+    if (pitch > 89.0f)  pitch = 89.0f;
+    if (pitch < -89.0f) pitch = -89.0f;
+
+    glm::vec3 direction;
+    direction.x = cos(glm::radians(yaw)) * cos(glm::radians(pitch));
+    direction.y = sin(glm::radians(pitch));
+    direction.z = sin(glm::radians(yaw)) * cos(glm::radians(pitch));
+    cameraFront = glm::normalize(direction);
+}
+
+void scroll_callback(GLFWwindow* window, double xoffset, double yoffset)
+{
+    if (fov >= 1.0f && fov <= 45.0f)
+        fov -= (float)yoffset;
+    if (fov <= 1.0f)
+        fov = 1.0f;
+    if (fov >= 45.0f)
+        fov = 45.0f;
+}
+
+void processInput(GLFWwindow* window)
+{
+    if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS) {
+        glfwSetWindowShouldClose(window, true);
+    }
+
+    float currentSpeed = 5.0f * deltaTime; 
+
+    if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS) {
+
+        printf("%d", GLFW_PRESS);
+        cameraPos += currentSpeed * cameraFront;
+    }
+    if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS) {
+        printf("%d", GLFW_PRESS);
+        cameraPos -= currentSpeed * cameraFront;
+    }
+    if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS) {
+        printf("%d", GLFW_PRESS);
+        cameraPos -= glm::normalize(glm::cross(cameraFront, cameraUp)) * currentSpeed;
+    }
+    if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS) {
+        printf("%d", GLFW_PRESS);
+        cameraPos += glm::normalize(glm::cross(cameraFront, cameraUp)) * currentSpeed;
+    }
 }
 
 static bool Initiate(int w, int h, const char* title)
@@ -56,6 +137,12 @@ static bool Initiate(int w, int h, const char* title)
     glfwGetFramebufferSize(window, &width, &height);
     glViewport(0, 0, width, height);
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
+
+    glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
+
+    glfwSetCursorPosCallback(window, mouse_callback);
+
+    glfwSetScrollCallback(window, scroll_callback);
 
     return true;
 }
@@ -149,7 +236,6 @@ bool loadModel(const std::string& path, std::vector<float>& vertices, std::vecto
     if (!err.empty()) std::cerr << "ERR: " << err << std::endl;
     if (!success) return false;
 
-    // Extract vertices and indices
     for (const auto& shape : shapes) {
         for (const auto& index : shape.mesh.indices) {
             vertices.push_back(attrib.vertices[3 * index.vertex_index + 0]);
@@ -184,7 +270,7 @@ GLuint loadTexture(const char* path) {
     int width, height, nrChannels;
     unsigned char* data = stbi_load(path, &width, &height, &nrChannels, 0);
     if (data) {
-        std::cout << "Texture loaded: " << path << " (" << width << "x" << height << ")" << std::endl;
+        printf("Texture loaded: %s size : (%d,%d)\n", path, width, height);
         GLenum format = GL_RGB;
         if (nrChannels == 1)      format = GL_RED;
         else if (nrChannels == 3) format = GL_RGB;
@@ -236,7 +322,7 @@ static void Setup(GLuint& VAO, GLuint& VBO, GLuint& EBO, const std::vector<float
 
 int main() {
  
-    if (!Initiate(800, 600, "OpenGL Project")) {
+    if (!Initiate(800, 600, "Computer Graphics Project")) {
         return -1;
     }
     
@@ -268,10 +354,6 @@ int main() {
         return -1;
     }
 
-    // --------------------------------------------------------------------
-    // 2) Create VAOs, VBOs, EBOs for each model
-    // --------------------------------------------------------------------
-
     // Cube
     Setup(cubeVAO, cubeVBO, cubeEBO, cubeVertices, cubeIndices);
 
@@ -284,17 +366,16 @@ int main() {
     // Wolf2
     Setup(Wolf2VAO, Wolf2VBO, Wolf2EBO, Wolf2Vertices, Wolf2Indices);
 
-    // --------------------------------------------------------------------
-    // 3) Load shaders & textures
-    // --------------------------------------------------------------------
+   
     GLuint shaderProgram = createShaderProgram("vertex_shader.glsl", "fragment_shader.glsl");
-
 
     GLuint cubeTexture = loadTexture("Objects\\Texture_Old_paint.jpg");
 
     // Set up camera
-    glm::mat4 view = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 0.0f, -3.0f));
-    glm::mat4 projection = glm::perspective(glm::radians(45.0f), (float)width / (float)height, 0.1f, 100.0f);
+    glm::mat4 view = glm::lookAt(cameraPos, cameraPos + cameraFront, cameraUp);
+    printf("CameraPos: %d , %d , %d", cameraPos.x, cameraPos.y, cameraPos.z);
+
+    glm::mat4 projection = glm::perspective(glm::radians(fov), (float)width / (float)height, 0.1f, 100.0f);
 
     glm::vec3 lightPos(1.2f, 1.0f, 2.0f);
 
@@ -311,9 +392,23 @@ int main() {
 
 
     while (!glfwWindowShouldClose(window)) {
+
+
+        float currentFrame = (float)glfwGetTime();
+        deltaTime = currentFrame - lastFrame;
+        lastFrame = currentFrame;
+
+        processInput(window);
+
+        view = glm::lookAt(cameraPos, cameraPos + cameraFront, cameraUp);
+
+        glm::mat4 projection = glm::perspective(glm::radians(fov),
+            (float)width / (float)height,
+            0.1f,
+            100.0f);
+
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-        glm::vec3 cameraPos(0.0f, 0.0f, 3.0f);
         glUniform3fv(glGetUniformLocation(shaderProgram, "viewPos"), 1, glm::value_ptr(cameraPos));
 
         // Animate light position
@@ -326,10 +421,7 @@ int main() {
         glUniformMatrix4fv(glGetUniformLocation(shaderProgram, "view"), 1, GL_FALSE, glm::value_ptr(view));
         glUniformMatrix4fv(glGetUniformLocation(shaderProgram, "projection"), 1, GL_FALSE, glm::value_ptr(projection));
         
-        // ------------------------------------------------------------
-        // Render the Cottage
-        // ------------------------------------------------------------
-        
+               
         // Bind texture for cottage
         glActiveTexture(GL_TEXTURE0);
         glBindTexture(GL_TEXTURE_2D, cubeTexture);
@@ -350,10 +442,6 @@ int main() {
             glDrawElements(GL_TRIANGLES, (GLsizei)cubeIndices.size(), GL_UNSIGNED_INT, 0);
         }
 
-        // ------------------------------------------------------------
-        // Render the Human
-        // ------------------------------------------------------------
-
 
         {
             glm::mat4 model = glm::mat4(1.0f);
@@ -365,10 +453,6 @@ int main() {
             glBindVertexArray(HumanVAO);
             glDrawElements(GL_TRIANGLES, (GLsizei)HumanIndices.size(), GL_UNSIGNED_INT, 0);
         }
-
-        // ------------------------------------------------------------
-        // Render the wolf1
-        // ------------------------------------------------------------
 
  
         {
@@ -382,9 +466,7 @@ int main() {
             glDrawElements(GL_TRIANGLES, (GLsizei)Wolf1Indices.size(), GL_UNSIGNED_INT, 0);
         }
 
-        // ------------------------------------------------------------
-        // Render the wolf2
-        // ------------------------------------------------------------
+
         {
             glm::mat4 model = glm::mat4(1.0f);
             model = glm::translate(model, glm::vec3(-1.5f, -0.5f, -2.0f));
