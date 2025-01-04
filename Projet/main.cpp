@@ -249,7 +249,7 @@ int main() {
 
     std::vector<float> HumanVertices;
     std::vector<unsigned int> HumanIndices;
-    if (!loadModel("Objects\\Human\\FinalBaseMesh_with_UVs.obj", HumanVertices, HumanIndices)) {
+    if (!loadModel("Objects\\OBJ\\OBJ.obj", HumanVertices, HumanIndices)) {
         std::cerr << "Failed to load obj" << std::endl;
         return -1;
     }
@@ -291,7 +291,6 @@ int main() {
 
 
     GLuint cubeTexture = loadTexture("Objects\\Texture_Old_paint.jpg");
-    GLuint humanTexture = loadTexture("Objects\\Human\\Texture_humain.jpg");
 
     // Set up camera
     glm::mat4 view = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 0.0f, -3.0f));
@@ -345,7 +344,7 @@ int main() {
             model = glm::scale(model, glm::vec3(0.06f));
 
             glUniformMatrix4fv(glGetUniformLocation(shaderProgram, "model"), 1, GL_FALSE, glm::value_ptr(model));
-            glUniform3f(glGetUniformLocation(shaderProgram, "objectColor"), 1.0f, 0.5f, 0.2f);
+            glUniform3f(glGetUniformLocation(shaderProgram, "objectColor"), 1.0f, 0.8f, 0.2f);
 
             glBindVertexArray(cubeVAO);
             glDrawElements(GL_TRIANGLES, (GLsizei)cubeIndices.size(), GL_UNSIGNED_INT, 0);
@@ -355,15 +354,11 @@ int main() {
         // Render the Human
         // ------------------------------------------------------------
 
-        glActiveTexture(GL_TEXTURE0);
-        glBindTexture(GL_TEXTURE_2D, humanTexture);
-        glUniform1i(glGetUniformLocation(shaderProgram, "material.diffuse"), 0);
-
 
         {
             glm::mat4 model = glm::mat4(1.0f);
             model = glm::translate(model, glm::vec3(0.0f, -0.35f, 2.0f));
-            model = glm::scale(model, glm::vec3(0.01f));
+            model = glm::scale(model, glm::vec3(0.001f));
             glUniformMatrix4fv(glGetUniformLocation(shaderProgram, "model"), 1, GL_FALSE, glm::value_ptr(model));
             glUniform3f(glGetUniformLocation(shaderProgram, "objectColor"), 0.8f, 0.7f, 0.6f);
 
@@ -375,9 +370,7 @@ int main() {
         // Render the wolf1
         // ------------------------------------------------------------
 
-        glActiveTexture(GL_TEXTURE0);
-        glBindTexture(GL_TEXTURE_2D, humanTexture);
-        glUniform1i(glGetUniformLocation(shaderProgram, "material.diffuse"), 0);
+ 
         {
             glm::mat4 model = glm::mat4(1.0f);
             model = glm::translate(model, glm::vec3(1.5f, -0.5f, -1.0f));

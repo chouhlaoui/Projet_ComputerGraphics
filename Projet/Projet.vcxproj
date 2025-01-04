@@ -150,14 +150,11 @@
     <None Include="fragment_shader.glsl" />
     <None Include="FinalBaseMesh.mtl" />
     <None Include="Objects\Cottage\cottage_obj.mtl" />
+    <None Include="Objects\OBJ\OBJ.mtl" />
     <None Include="Objects\Wolf\Wolf_obj.mtl" />
     <None Include="vertex_shader.glsl" />
   </ItemGroup>
   <ItemGroup>
-    <Object Include="..\..\..\..\..\OneDrive - Siemens AG\Bureau\Tree1.obj">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-    </Object>
     <Object Include="Objects\Cottage\cottage_obj.obj">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
@@ -174,12 +171,85 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </Object>
+    <Object Include="Objects\OBJ\OBJ.obj">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </Object>
     <Object Include="Objects\Wolf\Wolf_obj.obj">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </Object>
   </ItemGroup>
   <ItemGroup>
+    <Image Include="Objects\OBJ\OBJ\Cornea_metallic.png" />
+    <Image Include="Objects\OBJ\OBJ\Cornea_roughness.png" />
+    <Image Include="Objects\OBJ\OBJ\Custom_HairMat_diffuse.png" />
+    <Image Include="Objects\OBJ\OBJ\Custom_HairMat_metallic.png" />
+    <Image Include="Objects\OBJ\OBJ\Custom_HairMat_roughness.png" />
+    <Image Include="Objects\OBJ\OBJ\EyeMoisture_metallic.png" />
+    <Image Include="Objects\OBJ\OBJ\EyeMoisture_roughness.png" />
+    <Image Include="Objects\OBJ\OBJ\Eye_L_diffuse.png" />
+    <Image Include="Objects\OBJ\OBJ\Eye_L_metallic.png" />
+    <Image Include="Objects\OBJ\OBJ\Eye_L_roughness.png" />
+    <Image Include="Objects\OBJ\OBJ\Eye_R_diffuse.png" />
+    <Image Include="Objects\OBJ\OBJ\Eye_R_metallic.png" />
+    <Image Include="Objects\OBJ\OBJ\Eye_R_roughness.png" />
+    <Image Include="Objects\OBJ\OBJ\Eye_Shine_diffuse.png" />
+    <Image Include="Objects\OBJ\OBJ\Eye_Shine_metallic.png" />
+    <Image Include="Objects\OBJ\OBJ\Eye_Shine_opacity.png" />
+    <Image Include="Objects\OBJ\OBJ\Eye_Shine_roughness.png" />
+    <Image Include="Objects\OBJ\OBJ\GaaraNinjaWar_GaaraNinjaWar_diffuse.png" />
+    <Image Include="Objects\OBJ\OBJ\GaaraNinjaWar_GaaraNinjaWar_metallic.png" />
+    <Image Include="Objects\OBJ\OBJ\GaaraNinjaWar_GaaraNinjaWar_roughness.png" />
+    <Image Include="Objects\OBJ\OBJ\Irises_diffuse.jpg" />
+    <Image Include="Objects\OBJ\OBJ\Irises_metallic.png" />
+    <Image Include="Objects\OBJ\OBJ\Irises_roughness.png" />
+    <Image Include="Objects\OBJ\OBJ\MI_CHR_Man_LeatherCoat_02_00_diffuse.png" />
+    <Image Include="Objects\OBJ\OBJ\MI_CHR_Man_LeatherCoat_02_00_metallic.png" />
+    <Image Include="Objects\OBJ\OBJ\MI_CHR_Man_LeatherCoat_02_00_roughness.png" />
+    <Image Include="Objects\OBJ\OBJ\MI_CHR_Man_LeatherCoat_02_01_diffuse.png" />
+    <Image Include="Objects\OBJ\OBJ\MI_CHR_Man_LeatherCoat_02_01_metallic.png" />
+    <Image Include="Objects\OBJ\OBJ\MI_CHR_Man_LeatherCoat_02_01_roughness.png" />
+    <Image Include="Objects\OBJ\OBJ\MI_CHR_Man_LeatherCoat_02_diffuse.png" />
+    <Image Include="Objects\OBJ\OBJ\MI_CHR_Man_LeatherCoat_02_metallic.png" />
+    <Image Include="Objects\OBJ\OBJ\MI_CHR_Man_LeatherCoat_02_roughness.png" />
+    <Image Include="Objects\OBJ\OBJ\Mouth_diffuse.jpg" />
+    <Image Include="Objects\OBJ\OBJ\Mouth_metallic.png" />
+    <Image Include="Objects\OBJ\OBJ\Mouth_roughness.png" />
+    <Image Include="Objects\OBJ\OBJ\Pupils_diffuse.jpg" />
+    <Image Include="Objects\OBJ\OBJ\Pupils_metallic.png" />
+    <Image Include="Objects\OBJ\OBJ\Pupils_roughness.png" />
+    <Image Include="Objects\OBJ\OBJ\Sclera_diffuse.jpg" />
+    <Image Include="Objects\OBJ\OBJ\Sclera_metallic.png" />
+    <Image Include="Objects\OBJ\OBJ\Sclera_roughness.png" />
+    <Image Include="Objects\OBJ\OBJ\Std_Eyelash_diffuse.png" />
+    <Image Include="Objects\OBJ\OBJ\Std_Eyelash_metallic.png" />
+    <Image Include="Objects\OBJ\OBJ\Std_Eyelash_roughness.png" />
+    <Image Include="Objects\OBJ\OBJ\Std_Nails_diffuse.png" />
+    <Image Include="Objects\OBJ\OBJ\Std_Nails_metallic.png" />
+    <Image Include="Objects\OBJ\OBJ\Std_Nails_roughness.png" />
+    <Image Include="Objects\OBJ\OBJ\Std_Skin_Arm_diffuse.png" />
+    <Image Include="Objects\OBJ\OBJ\Std_Skin_Arm_metallic.png" />
+    <Image Include="Objects\OBJ\OBJ\Std_Skin_Arm_roughness.png" />
+    <Image Include="Objects\OBJ\OBJ\Std_Skin_Body_diffuse.png" />
+    <Image Include="Objects\OBJ\OBJ\Std_Skin_Body_metallic.png" />
+    <Image Include="Objects\OBJ\OBJ\Std_Skin_Body_roughness.png" />
+    <Image Include="Objects\OBJ\OBJ\Std_Skin_Head_diffuse.png" />
+    <Image Include="Objects\OBJ\OBJ\Std_Skin_Head_metallic.png" />
+    <Image Include="Objects\OBJ\OBJ\Std_Skin_Head_roughness.png" />
+    <Image Include="Objects\OBJ\OBJ\Std_Skin_Leg_diffuse.png" />
+    <Image Include="Objects\OBJ\OBJ\Std_Skin_Leg_metallic.png" />
+    <Image Include="Objects\OBJ\OBJ\Std_Skin_Leg_roughness.png" />
+    <Image Include="Objects\OBJ\OBJ\Std_Tongue_ao.jpg" />
+    <Image Include="Objects\OBJ\OBJ\Std_Tongue_diffuse.jpg" />
+    <Image Include="Objects\OBJ\OBJ\Std_Tongue_GradientAO.jpg" />
+    <Image Include="Objects\OBJ\OBJ\Std_Tongue_metallic.jpg" />
+    <Image Include="Objects\OBJ\OBJ\Std_Tongue_MicroNormal.png" />
+    <Image Include="Objects\OBJ\OBJ\Std_Tongue_normal.png" />
+    <Image Include="Objects\OBJ\OBJ\Std_Tongue_roughness.jpg" />
+    <Image Include="Objects\OBJ\OBJ\Teeth_diffuse.jpg" />
+    <Image Include="Objects\OBJ\OBJ\Teeth_metallic.png" />
+    <Image Include="Objects\OBJ\OBJ\Teeth_roughness.png" />
     <Image Include="Objects\texture.png" />
     <Image Include="Objects\Texture_humain.jpg" />
     <Image Include="Objects\Texture_Old_paint.jpg" />

@@ -28,6 +28,12 @@
     <Filter Include="Source Files\Objects\Cottage">
       <UniqueIdentifier>{75bad08a-2b74-476e-b064-980b54da5e90}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Objects\OBJ">
+      <UniqueIdentifier>{86f4dad0-85a0-48b1-8eee-bf9158075d76}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Objects\OBJ\OBJ">
+      <UniqueIdentifier>{3b2db516-0636-4004-a236-344cf9bc2922}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="tiny_obj_loader.cc">
@@ -67,6 +73,9 @@
     <None Include="FinalBaseMesh.mtl">
       <Filter>Source Files\Objects\Human</Filter>
     </None>
+    <None Include="Objects\OBJ\OBJ.mtl">
+      <Filter>Source Files\Objects\OBJ</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="tiny_obj_loader.h">
@@ -77,9 +86,6 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Object Include="..\..\..\..\..\OneDrive - Siemens AG\Bureau\Tree1.obj">
-      <Filter>Source Files</Filter>
-    </Object>
     <Object Include="Objects\cube.obj">
       <Filter>Source Files\Objects</Filter>
     </Object>
@@ -94,6 +100,9 @@
     </Object>
     <Object Include="Objects\Human\FinalBaseMesh_with_UVs.obj">
       <Filter>Source Files\Objects\Human</Filter>
+    </Object>
+    <Object Include="Objects\OBJ\OBJ.obj">
+      <Filter>Source Files\Objects\OBJ</Filter>
     </Object>
   </ItemGroup>
   <ItemGroup>
@@ -120,6 +129,213 @@
     </Image>
     <Image Include="Objects\Wolf\Texture_Wolf.jpg">
       <Filter>Source Files\Objects\Wolf</Filter>
+    </Image>
+    <Image Include="Objects\OBJ\OBJ\Eye_L_diffuse.png">
+      <Filter>Source Files\Objects\OBJ\OBJ</Filter>
+    </Image>
+    <Image Include="Objects\OBJ\OBJ\Eye_L_metallic.png">
+      <Filter>Source Files\Objects\OBJ\OBJ</Filter>
+    </Image>
+    <Image Include="Objects\OBJ\OBJ\Eye_L_roughness.png">
+      <Filter>Source Files\Objects\OBJ\OBJ</Filter>
+    </Image>
+    <Image Include="Objects\OBJ\OBJ\Eye_Shine_diffuse.png">
+      <Filter>Source Files\Objects\OBJ\OBJ</Filter>
+    </Image>
+    <Image Include="Objects\OBJ\OBJ\Eye_Shine_metallic.png">
+      <Filter>Source Files\Objects\OBJ\OBJ</Filter>
+    </Image>
+    <Image Include="Objects\OBJ\OBJ\Eye_Shine_opacity.png">
+      <Filter>Source Files\Objects\OBJ\OBJ</Filter>
+    </Image>
+    <Image Include="Objects\OBJ\OBJ\Eye_Shine_roughness.png">
+      <Filter>Source Files\Objects\OBJ\OBJ</Filter>
+    </Image>
+    <Image Include="Objects\OBJ\OBJ\MI_CHR_Man_LeatherCoat_02_01_diffuse.png">
+      <Filter>Source Files\Objects\OBJ\OBJ</Filter>
+    </Image>
+    <Image Include="Objects\OBJ\OBJ\MI_CHR_Man_LeatherCoat_02_01_metallic.png">
+      <Filter>Source Files\Objects\OBJ\OBJ</Filter>
+    </Image>
+    <Image Include="Objects\OBJ\OBJ\MI_CHR_Man_LeatherCoat_02_01_roughness.png">
+      <Filter>Source Files\Objects\OBJ\OBJ</Filter>
+    </Image>
+    <Image Include="Objects\OBJ\OBJ\Std_Skin_Arm_diffuse.png">
+      <Filter>Source Files\Objects\OBJ\OBJ</Filter>
+    </Image>
+    <Image Include="Objects\OBJ\OBJ\Std_Skin_Arm_metallic.png">
+      <Filter>Source Files\Objects\OBJ\OBJ</Filter>
+    </Image>
+    <Image Include="Objects\OBJ\OBJ\Std_Skin_Arm_roughness.png">
+      <Filter>Source Files\Objects\OBJ\OBJ</Filter>
+    </Image>
+    <Image Include="Objects\OBJ\OBJ\Std_Skin_Head_diffuse.png">
+      <Filter>Source Files\Objects\OBJ\OBJ</Filter>
+    </Image>
+    <Image Include="Objects\OBJ\OBJ\Std_Skin_Head_metallic.png">
+      <Filter>Source Files\Objects\OBJ\OBJ</Filter>
+    </Image>
+    <Image Include="Objects\OBJ\OBJ\Std_Skin_Head_roughness.png">
+      <Filter>Source Files\Objects\OBJ\OBJ</Filter>
+    </Image>
+    <Image Include="Objects\OBJ\OBJ\Std_Skin_Leg_diffuse.png">
+      <Filter>Source Files\Objects\OBJ\OBJ</Filter>
+    </Image>
+    <Image Include="Objects\OBJ\OBJ\Std_Skin_Leg_metallic.png">
+      <Filter>Source Files\Objects\OBJ\OBJ</Filter>
+    </Image>
+    <Image Include="Objects\OBJ\OBJ\Std_Skin_Leg_roughness.png">
+      <Filter>Source Files\Objects\OBJ\OBJ</Filter>
+    </Image>
+    <Image Include="Objects\OBJ\OBJ\Cornea_metallic.png">
+      <Filter>Source Files\Objects\OBJ\OBJ</Filter>
+    </Image>
+    <Image Include="Objects\OBJ\OBJ\Cornea_roughness.png">
+      <Filter>Source Files\Objects\OBJ\OBJ</Filter>
+    </Image>
+    <Image Include="Objects\OBJ\OBJ\GaaraNinjaWar_GaaraNinjaWar_diffuse.png">
+      <Filter>Source Files\Objects\OBJ\OBJ</Filter>
+    </Image>
+    <Image Include="Objects\OBJ\OBJ\GaaraNinjaWar_GaaraNinjaWar_metallic.png">
+      <Filter>Source Files\Objects\OBJ\OBJ</Filter>
+    </Image>
+    <Image Include="Objects\OBJ\OBJ\GaaraNinjaWar_GaaraNinjaWar_roughness.png">
+      <Filter>Source Files\Objects\OBJ\OBJ</Filter>
+    </Image>
+    <Image Include="Objects\OBJ\OBJ\MI_CHR_Man_LeatherCoat_02_00_diffuse.png">
+      <Filter>Source Files\Objects\OBJ\OBJ</Filter>
+    </Image>
+    <Image Include="Objects\OBJ\OBJ\MI_CHR_Man_LeatherCoat_02_00_metallic.png">
+      <Filter>Source Files\Objects\OBJ\OBJ</Filter>
+    </Image>
+    <Image Include="Objects\OBJ\OBJ\MI_CHR_Man_LeatherCoat_02_00_roughness.png">
+      <Filter>Source Files\Objects\OBJ\OBJ</Filter>
+    </Image>
+    <Image Include="Objects\OBJ\OBJ\Sclera_diffuse.jpg">
+      <Filter>Source Files\Objects\OBJ\OBJ</Filter>
+    </Image>
+    <Image Include="Objects\OBJ\OBJ\Sclera_metallic.png">
+      <Filter>Source Files\Objects\OBJ\OBJ</Filter>
+    </Image>
+    <Image Include="Objects\OBJ\OBJ\Sclera_roughness.png">
+      <Filter>Source Files\Objects\OBJ\OBJ</Filter>
+    </Image>
+    <Image Include="Objects\OBJ\OBJ\Std_Tongue_ao.jpg">
+      <Filter>Source Files\Objects\OBJ\OBJ</Filter>
+    </Image>
+    <Image Include="Objects\OBJ\OBJ\Std_Tongue_diffuse.jpg">
+      <Filter>Source Files\Objects\OBJ\OBJ</Filter>
+    </Image>
+    <Image Include="Objects\OBJ\OBJ\Std_Tongue_GradientAO.jpg">
+      <Filter>Source Files\Objects\OBJ\OBJ</Filter>
+    </Image>
+    <Image Include="Objects\OBJ\OBJ\Std_Tongue_metallic.jpg">
+      <Filter>Source Files\Objects\OBJ\OBJ</Filter>
+    </Image>
+    <Image Include="Objects\OBJ\OBJ\Std_Tongue_MicroNormal.png">
+      <Filter>Source Files\Objects\OBJ\OBJ</Filter>
+    </Image>
+    <Image Include="Objects\OBJ\OBJ\Std_Tongue_normal.png">
+      <Filter>Source Files\Objects\OBJ\OBJ</Filter>
+    </Image>
+    <Image Include="Objects\OBJ\OBJ\Std_Tongue_roughness.jpg">
+      <Filter>Source Files\Objects\OBJ\OBJ</Filter>
+    </Image>
+    <Image Include="Objects\OBJ\OBJ\EyeMoisture_metallic.png">
+      <Filter>Source Files\Objects\OBJ\OBJ</Filter>
+    </Image>
+    <Image Include="Objects\OBJ\OBJ\EyeMoisture_roughness.png">
+      <Filter>Source Files\Objects\OBJ\OBJ</Filter>
+    </Image>
+    <Image Include="Objects\OBJ\OBJ\Irises_diffuse.jpg">
+      <Filter>Source Files\Objects\OBJ\OBJ</Filter>
+    </Image>
+    <Image Include="Objects\OBJ\OBJ\Irises_metallic.png">
+      <Filter>Source Files\Objects\OBJ\OBJ</Filter>
+    </Image>
+    <Image Include="Objects\OBJ\OBJ\Irises_roughness.png">
+      <Filter>Source Files\Objects\OBJ\OBJ</Filter>
+    </Image>
+    <Image Include="Objects\OBJ\OBJ\MI_CHR_Man_LeatherCoat_02_diffuse.png">
+      <Filter>Source Files\Objects\OBJ\OBJ</Filter>
+    </Image>
+    <Image Include="Objects\OBJ\OBJ\MI_CHR_Man_LeatherCoat_02_metallic.png">
+      <Filter>Source Files\Objects\OBJ\OBJ</Filter>
+    </Image>
+    <Image Include="Objects\OBJ\OBJ\MI_CHR_Man_LeatherCoat_02_roughness.png">
+      <Filter>Source Files\Objects\OBJ\OBJ</Filter>
+    </Image>
+    <Image Include="Objects\OBJ\OBJ\Mouth_diffuse.jpg">
+      <Filter>Source Files\Objects\OBJ\OBJ</Filter>
+    </Image>
+    <Image Include="Objects\OBJ\OBJ\Mouth_metallic.png">
+      <Filter>Source Files\Objects\OBJ\OBJ</Filter>
+    </Image>
+    <Image Include="Objects\OBJ\OBJ\Mouth_roughness.png">
+      <Filter>Source Files\Objects\OBJ\OBJ</Filter>
+    </Image>
+    <Image Include="Objects\OBJ\OBJ\Pupils_diffuse.jpg">
+      <Filter>Source Files\Objects\OBJ\OBJ</Filter>
+    </Image>
+    <Image Include="Objects\OBJ\OBJ\Pupils_metallic.png">
+      <Filter>Source Files\Objects\OBJ\OBJ</Filter>
+    </Image>
+    <Image Include="Objects\OBJ\OBJ\Pupils_roughness.png">
+      <Filter>Source Files\Objects\OBJ\OBJ</Filter>
+    </Image>
+    <Image Include="Objects\OBJ\OBJ\Std_Nails_diffuse.png">
+      <Filter>Source Files\Objects\OBJ\OBJ</Filter>
+    </Image>
+    <Image Include="Objects\OBJ\OBJ\Std_Nails_metallic.png">
+      <Filter>Source Files\Objects\OBJ\OBJ</Filter>
+    </Image>
+    <Image Include="Objects\OBJ\OBJ\Std_Nails_roughness.png">
+      <Filter>Source Files\Objects\OBJ\OBJ</Filter>
+    </Image>
+    <Image Include="Objects\OBJ\OBJ\Std_Skin_Body_diffuse.png">
+      <Filter>Source Files\Objects\OBJ\OBJ</Filter>
+    </Image>
+    <Image Include="Objects\OBJ\OBJ\Std_Skin_Body_metallic.png">
+      <Filter>Source Files\Objects\OBJ\OBJ</Filter>
+    </Image>
+    <Image Include="Objects\OBJ\OBJ\Std_Skin_Body_roughness.png">
+      <Filter>Source Files\Objects\OBJ\OBJ</Filter>
+    </Image>
+    <Image Include="Objects\OBJ\OBJ\Teeth_diffuse.jpg">
+      <Filter>Source Files\Objects\OBJ\OBJ</Filter>
+    </Image>
+    <Image Include="Objects\OBJ\OBJ\Teeth_metallic.png">
+      <Filter>Source Files\Objects\OBJ\OBJ</Filter>
+    </Image>
+    <Image Include="Objects\OBJ\OBJ\Teeth_roughness.png">
+      <Filter>Source Files\Objects\OBJ\OBJ</Filter>
+    </Image>
+    <Image Include="Objects\OBJ\OBJ\Custom_HairMat_diffuse.png">
+      <Filter>Source Files\Objects\OBJ\OBJ</Filter>
+    </Image>
+    <Image Include="Objects\OBJ\OBJ\Custom_HairMat_metallic.png">
+      <Filter>Source Files\Objects\OBJ\OBJ</Filter>
+    </Image>
+    <Image Include="Objects\OBJ\OBJ\Custom_HairMat_roughness.png">
+      <Filter>Source Files\Objects\OBJ\OBJ</Filter>
+    </Image>
+    <Image Include="Objects\OBJ\OBJ\Eye_R_diffuse.png">
+      <Filter>Source Files\Objects\OBJ\OBJ</Filter>
+    </Image>
+    <Image Include="Objects\OBJ\OBJ\Eye_R_metallic.png">
+      <Filter>Source Files\Objects\OBJ\OBJ</Filter>
+    </Image>
+    <Image Include="Objects\OBJ\OBJ\Eye_R_roughness.png">
+      <Filter>Source Files\Objects\OBJ\OBJ</Filter>
+    </Image>
+    <Image Include="Objects\OBJ\OBJ\Std_Eyelash_diffuse.png">
+      <Filter>Source Files\Objects\OBJ\OBJ</Filter>
+    </Image>
+    <Image Include="Objects\OBJ\OBJ\Std_Eyelash_metallic.png">
+      <Filter>Source Files\Objects\OBJ\OBJ</Filter>
+    </Image>
+    <Image Include="Objects\OBJ\OBJ\Std_Eyelash_roughness.png">
+      <Filter>Source Files\Objects\OBJ\OBJ</Filter>
     </Image>
   </ItemGroup>
 </Project>
